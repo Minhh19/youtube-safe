@@ -1,0 +1,8 @@
+#!name=YouTube Safe Experimental
+#!desc=Experimental YouTube response filter; only youtubei.googleapis.com; HTTPS decryption required
+
+[Script]
+youtube-safe-player = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player(?:\?|$),requires-body=1,max-size=2000000,script-path=https://example.invalid/youtube.safe.js
+
+[MITM]
+hostname = youtubei.googleapis.com
